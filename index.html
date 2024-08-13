@@ -4,49 +4,179 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CavLearn</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./fontawesome-free-6.5.2-web/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
-                <a href="index.html">cavLearn</a>
+                <a href="index.html">
+                    cav<span class="highlight">Learn</span>
+                </a>
             </div>
-            <nav>
-                <ul>
+            <nav class="nav-links">
+                <!--Menu Side Bar-->
+                <ul class="sideBar">
+                    <i id="fa-close" class="fa-solid fa-close" onclick=closeBar()></i>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="my_library.html">My Library</a></li>
-                    <li>
-                        <a href="#">Catalog</a>
-                        <ul class="dropdown">
+                    <li class="dropdown">
+                        <a href="#">Catalog <i class="fa-solid fa-arrow-down"></i></a>
+                        <ul class="dropdown-content">
                             <li><a href="category.html?subject=science">Computer Science</a></li>
-                            <li><a href="category.html?subject=literature"></a>Economics</li>
+                            <li><a href="category.html?subject=literature">Economics</a></li>
                             <li><a href="category.html?subject=history">Business Adminstration</a></li>
                             <li><a href="category.html?subject=technology">Purchasing & Supply</a></li>
                         </ul>
                     </li>
-                    <li><a href="events.html">Login</a></li>
-                    <li><a href="forums.html">Signup</a></li>   
+                   <div class="login-links">
+                        <li><a href="events.html">Login <i class="fa-solid fa-user"></i></a></li>
+                        <li><a href="forums.html">Signup <i class="fa-solid fa-user-plus"></i></a></li>
+                   </div>   
+                </ul>
+                <!--Menu Side Bar end-->
+                <ul id="onMobile">
+                    <!--Large Screen navigation links-->
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="my_library.html">My Library</a></li>
+                    <li class="dropdown">
+                        <a href="#">Catalog <i class="fa-solid fa-arrow-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="category.html?subject=science">Computer Science</a></li>
+                            <li><a href="category.html?subject=literature">Economics</a></li>
+                            <li><a href="category.html?subject=history">Business Adminstration</a></li>
+                            <li><a href="category.html?subject=technology">Purchasing & Supply</a></li>
+                        </ul>
+                    </li>
+                   <div class="login-links">
+                        <li><a href="events.html">Login <i class="fa-solid fa-user"></i></a></li>
+                        <li><a href="forums.html">Signup <i class="fa-solid fa-user-plus"></i></a></li>
+                   </div>   
                 </ul>
             </nav>
-            <div class="search-bar">
-                <input type="text" placeholder="Search books, articles...">
-                <button type="button"><i class="fa-solid fa-bars"></i></button>
-            </div>
+           
             <div class="menu">
-                <i class="fa-solid fa-bars"></i>
+                <i id="bar" class="fa-solid fa-bars" onclick=menuBar()></i>
             </div>
+        </div>
+        <div id="onMobile" class="search-bar">
+            <input type="text" placeholder="Search books, articles...">
+            <i class="fa-solid fa-search" id="faSearch"></i>
         </div>
     </header>
 
-    <main>
-        <section class="intro">
-            <h1>Welcome to CavLearn: Your Gateway to Knowledge</h1>
-            <p>At CavLearn, we believe that learning should be limitless. Dive into a world where books, research, and academic resources are just a click away.</p>
-            <a href="catalog.html" class="cta-button">Start Exploring</a>
+    <!-- Main Body -->
+    <div class="main-container">
+        <main>
+            <section class="intro">
+                <h1>Welcome to Cav<span class="highlight">Learn</span>: Your Gateway to Knowledge</h1>
+                <p>We believe that learning should be limitless. Dive into a world where books, research, and academic resources are just a click away.</p>
+                <a href="catalog.html" class="cta-button">Start Exploring</a>
+            </section>
+        </main>
+
+        <section>
+            <div class="course-books">
+                  <!-- Computer Science Books -->
+                    <section class="subject-category">
+                        <h3>Computer Science</h3>
+                        <ul>
+                            <li>
+                                <h4>Introduction to Algorithms</h4>
+                                <p><strong>Authors:</strong> Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein</p>
+                                <p>A comprehensive book that covers a wide range of algorithms in depth, ideal for both beginners and advanced students.</p>
+                            </li>
+                            <li>
+                                <h4>Artificial Intelligence: A Modern Approach</h4>
+                                <p><strong>Authors:</strong> Stuart Russell, Peter Norvig</p>
+                                <p>This book is a leading textbook in the field of artificial intelligence, covering both theory and practice in AI.</p>
+                            </li>
+                            <li>
+                                <h4>Clean Code: A Handbook of Agile Software Craftsmanship</h4>
+                                <p><strong>Author:</strong> Robert C. Martin</p>
+                                <p>This book provides best practices for writing clean, maintainable, and efficient code, essential for software developers.</p>
+                            </li>
+                        </ul>
+                        <a href="">See More</a>
+                    </section>
+
+                    <!-- Economics Books -->
+                    <section class="subject-category">
+                        <h3>Economics</h3>
+                        <ul>
+                            <li>
+                                <h4>Principles of Economics</h4>
+                                <p><strong>Author:</strong> N. Gregory Mankiw</p>
+                                <p>A fundamental textbook that introduces the principles of microeconomics and macroeconomics, suitable for beginners.</p>
+                            </li>
+                            <li>
+                                <h4>The Wealth of Nations</h4>
+                                <p><strong>Author:</strong> Adam Smith</p>
+                                <p>This classic book lays the foundation of modern economic theory and discusses the role of self-interest in economic life.</p>
+                            </li>
+                            <li>
+                                <h4>Freakonomics: A Rogue Economist Explores the Hidden Side of Everything</h4>
+                                <p><strong>Authors:</strong> Steven D. Levitt, Stephen J. Dubner</p>
+                                <p>An unconventional book that applies economic theory to diverse, real-world scenarios, making economics accessible and fun.</p>
+                            </li>
+                        </ul>
+                        <a href="">See More</a>
+                    </section>
+
+                    <!-- Business Administration Books -->
+                    <section class="subject-category">
+                        <h3>Business Administration</h3>
+                        <ul>
+                            <li>
+                                <h4>Good to Great: Why Some Companies Make the Leap... and Others Don't</h4>
+                                <p><strong>Author:</strong> Jim Collins</p>
+                                <p>This book explores the key factors that allow some companies to achieve long-term success and others to falter.</p>
+                            </li>
+                            <li>
+                                <h4>The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses</h4>
+                                <p><strong>Author:</strong> Eric Ries</p>
+                                <p>A must-read for entrepreneurs and business students, this book introduces lean principles to startup development.</p>
+                            </li>
+                            <li>
+                                <h4>Harvard Business Review on Managing Yourself</h4>
+                                <p><strong>Authors:</strong> Various</p>
+                                <p>A collection of articles from Harvard Business Review, providing insights into personal and professional development.</p>
+                            </li>
+                        </ul>
+                        <a href="">See More</a>
+                    </section>
+
+                    <!-- Purchasing & Supply Books -->
+                    <section class="subject-category">
+                        <h3>Purchasing & Supply</h3>
+                        <ul>
+                            <li>
+                                <h4>Purchasing and Supply Chain Management</h4>
+                                <p><strong>Authors:</strong> Kenneth Lysons, Brian Farrington</p>
+                                <p>This comprehensive textbook covers all aspects of purchasing and supply chain management, from theory to practice.</p>
+                            </li>
+                            <li>
+                                <h4>Supply Chain Management: Strategy, Planning, and Operation</h4>
+                                <p><strong>Author:</strong> Sunil Chopra, Peter Meindl</p>
+                                <p>A key text for understanding the complexities of supply chain management, including strategy and planning.</p>
+                            </li>
+                            <li>
+                                <h4>The Procurement and Supply Manager's Desk Reference</h4>
+                                <p><strong>Authors:</strong> Fred Sollish, John Semanik</p>
+                                <p>This practical guide provides essential tools and techniques for professionals in procurement and supply management.</p>
+                            </li>
+                        </ul>
+                        <a href="">See More</a>
+                    </section>
+            </div>
         </section>
-    </main>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Cavendish University Zambi
+        <p>&copy; 2024 Cavendish University Zambia. All rights reserved.</p>
+    </footer>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>
