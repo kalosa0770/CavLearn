@@ -310,7 +310,7 @@ nav ul {
 .nav-links li a {
     text-decoration: none;
     color: black;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 /* dropdown styles */
@@ -357,7 +357,7 @@ nav ul {
 }
 
 .login-links li a {
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
 
 .sideBar .login-links {
@@ -367,6 +367,39 @@ nav ul {
     position: absolute;
     bottom: 0;
     right: 0;
+}
+
+.login hr {
+    margin-bottom: 50px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    gap: 30px;
+}
+
+.login .footer-icons {
+    display: none;
+    justify-content: space-between;
+    margin-top: 40px;
+    text-decoration: none;
+    padding-top: 40px;
+    font-size: 0.6rem;
+}
+
+.login .footer-icons a {
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.login .footer-icons a i {
+    font-size: 1.3rem;
 }
 
 /* menu icon styles */
@@ -703,13 +736,45 @@ footer p {
 
     .login-links {
         display: flex;
-        padding-left: 70px;
+        padding-left: 30px;
+        margin-bottom: 50px;
     }
     
     .login-links li a {
+        font-size: 1rem;
+    }
+    .login hr {
+        margin-bottom: 50px;
+    }
+    .login {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        gap: 30px;
+    }
+    
+    .login .footer-icons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        text-decoration: none;
+        padding-top: 40px;
+        font-size: 0.6rem;
+    }
+    
+    .login .footer-icons a {
+        text-decoration: none;
         font-size: 1.3rem;
     }
-
+    
+    .login .footer-icons a i {
+        font-size: 1.3rem;
+    }
+    
     /* MenuBar styles */
 
     .sideBar {
@@ -829,6 +894,32 @@ footer p {
         flex: 2;
         gap: 20px;
         width: 100%;
+    }
+
+    .subject-category li {
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-left: 5px solid #007bff;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s linear, transform 0.3s ease;
+        cursor: pointer;
+        width: 100%;
+        font-size: 1.8rem;
+        height: max-content;
+    }
+
+    .subject-category li h4 {
+        margin: 0;
+        font-size: 1rem;
+        color: #007bff;
+    }
+    
+    .subject-category li p {
+        margin: 5px 0;
+        font-size: 1rem;
+        color: #555;
     }
 
     .subject-category a {
