@@ -34,7 +34,7 @@ header {
 }
 
 .header-container .logo a {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     text-decoration: none;
     color: black;
 }
@@ -45,10 +45,20 @@ header {
 
 /* MenuBar styles */
 
+/* @keyframes sidebar-slow {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
 .sideBar {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -400px;
     left: 20px;
     width: 400px;
     background-color: #127eb3;
@@ -62,16 +72,111 @@ header {
     justify-content: flex-start;
     margin: 0;
     font-size: 1.2rem;
+    animation-name: sidebar-slow;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+   
 }
+
+
+@keyframes close-slow {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+    
+}
+.sidebar.active {
+
+} */
+
+.sideBar {
+    position: fixed;
+    top: 0;
+    right: -100%; 
+    width: 400px;
+    background-color: #91bfd6;
+    height: 100vh;
+    z-index: 999;
+    display: flex; 
+    flex-direction: column;
+    padding: 8px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0;
+    font-size: 1.2rem;
+    transition: right 2s ease; 
+}
+
+.sideBar li {
+    width: 100%;
+    color: #000;
+}
+
+.sideBar li a {
+    color: #000;
+}
+
+
+.sideBar.visible {
+    right: 0;
+}
+
+/* Menu icon */
+.menu i {
+    transition: transform 0.3s ease;
+    
+}
+
+#bar {
+    font-size: 2rem;
+}
+
+.fa-solid.fa-times {
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    color: #000;
+    font-size: 1.3rem;
+}
+
+.menu i.active {
+    transform: rotate(90deg); /* Rotate 90 degrees */
+}
+
+
+/* @keyframes close-slow {
+    from {
+        transform: rotateX(90deg);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+    
+}
+
+.fa-close {
+    animation-name: close-slow;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    transition: all 0.75s ease;
+} */
 
 .nav-links .sideBar li {
     width: 100%;
-    color: white;
+    color: #000;
+    font-weight: bold;
 }
 
 .nav-links .sideBar li a {
-    color: white;
+    color: #000;
     width: 100%;
+    font-weight: bold;
 }
 
 .sideBar .dropdown {
@@ -105,24 +210,25 @@ nav {
     flex: 2;
 }
 
-.search-bar {
+.search-container {
     flex: 1;
     text-align: center;
     width: 100%;
     padding-right: 270px;
     position: relative;
+    margin-top: 50px;
     
 }
 
-.search-bar input {
+.search-container input {
     border: 1px solid white;
     border-radius: 2px;
     height: 80px;
     background-color: #f1f1f1;
-    max-width: 300px;
+    max-width: 500px;
 }
 
-.search-bar input[type="text"] {
+.search-container input[type="text"] {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -132,31 +238,40 @@ nav {
     transition: border-color 0.3s;
 }
 
-.search-bar input[type="text"]:focus {
+.search-container input[type="text"]:focus {
     border-color: #007bff; 
 }
 
-.search-bar input::placeholder {
+.search-container input::placeholder {
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 0.8rem;
+    font-size: 1.8rem;
 }
 
-.search-bar input[type="text"] {
+.search-container input[type="text"] {
     color: #000; 
     background-color: #f9f9f9; 
     caret-color: #127eb3; 
     font-family: 'Arial', sans-serif; 
     font-weight: bold; 
+    font-size: 1.8rem;
 }
 
-.search-bar button {
+.search-container button {
     border: none;
     background-color: none;
 }
 
-.search-bar button i {
+.search-container button i {
     background-color: none;
+    font-size: 1.8rem;
+}
+
+#search-icon {
+    cursor: pointer;
+    font-size: 1.7rem;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #faSearch {
@@ -173,10 +288,11 @@ nav {
 
 nav ul {
     list-style-type: none;
-    margin: 0;
+    margin-right: auto;
+    margin-left: auto;
     padding: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .nav-links {
@@ -194,7 +310,7 @@ nav ul {
 .nav-links li a {
     text-decoration: none;
     color: black;
-    font-size: 1.1rem;
+    font-size: 2rem;
 }
 
 /* dropdown styles */
@@ -216,7 +332,7 @@ nav ul {
 }
 
 .dropdown-content li a {
-    font-size: 1rem;
+    font-size: 2rem;
     color: #127eb3;
     width: 100%;
 }
@@ -241,7 +357,7 @@ nav ul {
 }
 
 .login-links li a {
-    font-size: 0.8rem;
+    font-size: 2rem;
 }
 
 .sideBar .login-links {
@@ -255,18 +371,10 @@ nav ul {
 
 /* menu icon styles */
 
-.sideBar i {
-    cursor: pointer;
-}
 
-#fa-close {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
-    color: white;
-}
+
+
+
 
 
 
@@ -286,7 +394,7 @@ nav ul {
 }
 
 .intro h1 {
-    font-size: 2rem;
+    font-size: 3.5rem;
     color: #000;
     font-weight: 500;
 }
@@ -363,6 +471,8 @@ nav ul {
     transition: background-color 0.3s linear, transform 0.3s ease;
     cursor: pointer;
     width: 100%;
+    font-size: 1.8rem;
+    height: 200px;
 }
 
 .subject-category li:hover {
@@ -371,13 +481,13 @@ nav ul {
 
 .subject-category li h4 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: #007bff;
 }
 
 .subject-category li p {
     margin: 5px 0;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     color: #555;
 }
 
@@ -401,6 +511,10 @@ nav ul {
 
 .slideshow {
     display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*what do you want styles */
@@ -409,22 +523,31 @@ nav ul {
     width: 100%;
 }
 
+.slide {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .what-do-you-want p {
-    font-size: 2rem;
+    font-size: 4rem;
     color: #000;
+    text-align: left;
+    margin-bottom: 20px;
 }
 
 .content-courses {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 15px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
+    max-width: 100%;
     text-align: center;
+    gap: 30px;
 }
 
 .content-courses img {
@@ -438,6 +561,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    gap: 20px;
 }
 
 .actions a {
@@ -446,6 +570,7 @@ nav ul {
     border-radius: 5px;
     font-weight: bold;
     color: white;
+    font-size: 1.5rem;
     transition: background-color 0.3s ease;
 }
 
@@ -482,19 +607,20 @@ nav ul {
 }
 
 .motivation-section p {
-    font-size: 1.2rem;
+    font-size: 3.2rem;
     color: #555;
     margin-bottom: 40px;
     max-width: 800px;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
 .motivation-cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
 }
 
 .motivation-card {
@@ -503,7 +629,7 @@ nav ul {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     flex: 1;
-    max-width: 300px;
+    max-width: 100%;
     text-align: left;
     margin: 20px;
 }
@@ -515,8 +641,33 @@ nav ul {
 }
 
 .motivation-card p {
-    font-size: 1rem;
+    font-size: 1.8rem;
     color: #666;
+}
+
+footer {
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-right: 15px;
+    gap: 20px;
+}
+
+.footer-icons i {
+    cursor: pointer;
+    font-size: 2.5rem;
+}
+
+footer p {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 20px;
 }
 /* Mobile Responsive header */
 @media screen and (max-width: 1200px) {
@@ -543,10 +694,78 @@ nav ul {
         text-decoration: none;
         color: black;
     }
+
+    .nav-links li a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.2rem;
+    }
+
+    .login-links {
+        display: flex;
+        padding-left: 70px;
+    }
+    
+    .login-links li a {
+        font-size: 1.3rem;
+    }
+
+    /* MenuBar styles */
+
+    .sideBar {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 100%;
+        background-color: #91bfd6;
+        height: 100vh;
+        z-index: 999;
+        display: flex; 
+        flex-direction: column;
+        padding: 8px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 0;
+        font-size: 1.2rem;
+        transition: right 2s ease; 
+    }
+    
+    .sideBar li {
+        width: 100%;
+        color: #000;
+    }
+    
+    .sideBar li a {
+        color: #000;
+    }
+    
+    
+    .sideBar.visible {
+        right: 0;
+    }
+    
+    /* Menu icon */
+    .menu i {
+        transition: transform 0.3s ease;
+        
+    }
+
+    #bar {
+        font-size: 1.3rem;
+    }
+    
+    
+    .sideBar .login-links {
+        display: flex;
+        padding: 20%;
+        width: 100%;
+        position: absolute;
+    }    
     
     .highlight {
         color: #0020f3;
     }
+
 
     .main-container {
         width: 100%;
@@ -560,6 +779,7 @@ nav ul {
     .intro {
         width: 100%;
         padding: 12px;
+        margin-top: 30px;
     }
     
     .intro h1 {
@@ -588,6 +808,10 @@ nav ul {
         text-transform: lowercase;
     }
 
+    .intro i {
+        font-size: 1rem;
+    }
+
     .course-books {
         width: 100%;
         display: block;
@@ -602,13 +826,75 @@ nav ul {
         padding-left: 12px;
         display: flex;
         flex-direction: column;
-        flex: 3;
+        flex: 2;
         gap: 20px;
+        width: 100%;
+    }
+
+    .subject-category a {
+        font-size: 1.2rem;
+    }
+
+    .subject-category i {
+        font-size: 1rem;
+    }
+
+    .search-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    #search-icon {
+        cursor: pointer;
+        font-size: 20px;
+        position: absolute;
+        right: 35px;
+    }
+
+    .search-container input[type="text"] {
+        color: #000; 
+        background-color: #f9f9f9; 
+        caret-color: #127eb3; 
+        font-family: 'Arial', sans-serif; 
+        font-weight: bold; 
+        font-size: 1rem;
+    }
+
+    .search-container input::placeholder {
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1rem;
+    }
+
+    .search-input {
+        width: 100%;
+        opacity: 0;
+        transition: width 0.4s ease, opacity 0.4s ease;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    #search-input {
+        width: 500px;
+        height: 40px;
+        margin-left: 20px;
+       
+    }
+
+    .search-input.active {
+        width: 400px;
+        opacity: 1;
     }
 
     .slideshow {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     /*what do you want styles */
@@ -620,6 +906,8 @@ nav ul {
     .what-do-you-want p {
         font-size: 1.5rem;
         color: #000;
+        text-align: center;
+        width: 100%;
     }
 
     .content-courses {
@@ -657,6 +945,7 @@ nav ul {
         color: white;
         transition: background-color 0.3s ease;
         text-align: center;
+        font-size: 0.5rem;
     }
 
     .download-btn {
@@ -685,7 +974,7 @@ nav ul {
     }
     
     .motivation-section h2 {
-        font-size: 2.5rem;
+        font-size: 1.7rem;
         color: #000;
         font-weight: lighter;
         margin-bottom: 20px;
@@ -727,5 +1016,30 @@ nav ul {
     .motivation-card p {
         font-size: 1rem;
         color: #666;
+    }
+
+    footer {
+        width: 100%;
+        background-color: #f9f9f9;
+    }
+
+    .footer-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        margin-right: 15px;
+        gap: 20px;
+    }
+
+    .footer-icons i {
+        cursor: pointer;
+        font-size: 1.7rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+        text-align: center;
+        padding: 20px;
     }
 }

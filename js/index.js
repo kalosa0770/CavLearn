@@ -1,39 +1,46 @@
-// Menu Mobile Bar
+// // Menu Mobile Bar
+// function menuBar() {
+//     const menubar = document.querySelector(".sideBar")
+//     menubar.style.display = 'flex'
+// }
+
+// // Close Menu Bar
+// function closeBar() {
+//     const menubar = document.querySelector(".sideBar")
+//     menubar.style.display = 'none'
+// }
+
 function menuBar() {
-    const menubar = document.querySelector(".sideBar")
-    menubar.style.display = 'flex'
-}
+    const sideBar = document.querySelector('.sideBar');
+    const icon = document.getElementById('bar');
 
-// Close Menu Bar
-function closeBar() {
-    const menubar = document.querySelector(".sideBar")
-    menubar.style.display = 'none'
-}
+    // Toggle the sidebar visibility
+    sideBar.classList.toggle('visible');
 
-let slideIndex = 0;
-const slides = document.querySelectorAll(".slide");
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.remove("active");
-        if (i === index) {
-            slide.classList.add("active");
-        }
-    });
-}
-
-function changeSlide(n) {
-    slideIndex += n;
-    if (slideIndex >= slides.length) {
-        slideIndex = 0;
-    } else if (slideIndex < 0) {
-        slideIndex = slides.length - 1;
+    // Toggle the icon from bars to times and vice versa
+    if (icon.classList.contains('fa-bars')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
     }
-    showSlide(slideIndex);
 }
 
-// Initialize the first slide
-showSlide(slideIndex);
+function closeBar() {
+    const sideBar = document.querySelector('.sideBar');
+    const icon = document.getElementById('bar');
 
-// Optionally, automatically change slides every 5 seconds
-setInterval(() => changeSlide(1), 5000);
+    // Remove the visible class to close the sidebar
+    sideBar.classList.remove('visible');
+
+    // Change the icon back to bars
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+}
+
+function toggleSearch() {
+    const searchInput = document.getElementById("search-input");
+    searchInput.classList.toggle("active");
+    searchInput.focus();
+}
