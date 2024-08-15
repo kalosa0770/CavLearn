@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CavLearn</title>
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.5.2-web/css/all.min.css') }}">
 </head>
 <body>
     <header>
@@ -16,9 +16,8 @@
                 </a>
             </div>
             <nav class="nav-links">
-                <!-- Menu Side Bar -->
-                <ul class="sideBar" id="sideBar">
-                    <i id="fa-close" class="fa-solid fa-times" onclick=closeBar()></i>
+                <ul class="sideBar">
+                    <i id="fa-close" class="fa-solid fa-close" onclick="closeBar()"></i>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="my_library.html">My Library</a></li>
                     <li class="dropdown">
@@ -30,27 +29,14 @@
                             <li><a href="category.html?subject=technology">Purchasing & Supply</a></li>
                         </ul>
                     </li>
-                    <div class="login">
-                        <div class="login-links">
-                            <li><a href="login.html">Login <i class="fa-solid fa-user"></i></a></li>
-                            <li><a href="signup.html">Signup <i class="fa-solid fa-user-plus"></i></a></li> 
-                        </div>
-                        <hr>
-                            <div class="footer-icons" style="margin-top: 40px;">
-                                <a href="#"><i class="fab fa-facebook" style="color: rgb(28, 61, 223);"></i></a>
-                                <a href="#"><i class="fab fa-github" style="color: gainsboro;"></i></a>
-                                <a href="#"><i class="fas fa-envelope" style="color: rgb(221, 104, 104);"></i></a>
-                                <a href="#"><i class="fab fa-linkedin" style="color: rgb(42, 42, 168);"></i></a>
-                            </div>
-                         
-                    </div>
-                    
+                    <div class="login-links">
+                        <li><a href="{{url_for('login')}}">Login <i class="fa-solid fa-user"></i></a></li>
+                        <li><a href="forums.html">Signup <i class="fa-solid fa-user-plus"></i></a></li>
+                    </div>   
                 </ul>
-                <!-- Menu Side Bar end -->
                 <ul id="onMobile">
-                    <!-- Large Screen navigation links -->
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="library.html">My Library</a></li>
+                    <li><a href="my_library.html">My Library</a></li>
                     <li class="dropdown">
                         <a href="#">Catalog <i class="fa-solid fa-arrow-down"></i></a>
                         <ul class="dropdown-content">
@@ -61,55 +47,56 @@
                         </ul>
                     </li>
                     <div class="login-links">
-                        <li><a href="events.html">Login <i class="fa-solid fa-user"></i></a></li>
+                        <li><a href="{{url_for('login')}}">Login <i class="fa-solid fa-user"></i></a></li>
                         <li><a href="forums.html">Signup <i class="fa-solid fa-user-plus"></i></a></li>
                     </div>   
                 </ul>
             </nav>
-           
             <div class="menu">
-                <i id="bar" class="fa-solid fa-bars" onclick=menuBar()></i>
+                <i id="bar" class="fa-solid fa-bars" onclick="menuBar()"></i>
             </div>
         </div>
-        
-        <div class="search-container">
-           
-            <input type="text" id="search-input" class="search-input" placeholder="Search...">
-            <i class="fas fa-search" id="search-icon" onclick="toggleSearch()"></i>
+        <div id="onMobile" class="search-bar">
+            <form action="{{ url_for('search') }}" method="GET">
+                <input type="text" name="query" placeholder="Search books, articles..." required>
+                <button type="submit"><i class="fa-solid fa-search" id="faSearch"></i></button>
+            </form>
         </div>
+        
     </header>
 
-    <!-- Main Body -->
     <div class="main-container">
         <main>
             <section class="intro">
                 <h1>Welcome to cav<span class="highlight">Learn</span>: Your Gateway to Knowledge</h1>
                 <p>We believe that learning should be limitless. Dive into a world where books, research, and academic resources are just a click away.</p>
-                <a href="catalog.html" class="cta-button">Start Exploring <i class="fa-solid fa-angle-right"></i></a>
+                <a href="catalog.html" class="cta-button">Start Exploring</a>
             </section>
         </main>
 
         <section>
             <div class="course-books">
-                  <!-- Recently posted posts -->
-                    <section class="subject-category">
-                        <h3>Recently posted</h3>
-                        <ul>
-                            <li>
-                                <h4>Introduction to Algorithms</h4>
-                                <p><strong>Authors:</strong> Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein</p>
-                            </li>
-                            <li>
-                                <h4>Principles of Economics</h4>
-                                <p><strong>Author:</strong> N. Gregory Mankiw</p> 
-                            </li>
-                            <li>
-                                <h4>Good to Great: Why Some Companies Make the Leap... and Others Don't</h4>
-                                <p><strong>Author:</strong> Jim Collins</p>
-                            </li>
-                        </ul>
-                        <a href="">See More <i class="fa-solid fa-arrow-down"></i></a>
-                    </section>
+                <section class="subject-category">
+                    <h3>Recently posted</h3>
+                    <ul>
+                        <li>
+                            <h4>Introduction to Algorithms</h4>
+                            <p><strong>Authors:</strong> Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein</p>
+                            <p>A comprehensive book that covers a wide range of algorithms in depth, ideal for both beginners and advanced students.</p>
+                        </li>
+                        <li>
+                            <h4>Principles of Economics</h4>
+                            <p><strong>Author:</strong> N. Gregory Mankiw</p>
+                            <p>A fundamental textbook that introduces the principles of microeconomics and macroeconomics, suitable for beginners.</p>
+                        </li>
+                        <li>
+                            <h4>Good to Great: Why Some Companies Make the Leap... and Others Don't</h4>
+                            <p><strong>Author:</strong> Jim Collins</p>
+                            <p>This book explores the key factors that allow some companies to achieve long-term success and others to falter.</p>
+                        </li>
+                    </ul>
+                    <a href="">See More</a>
+                </section>
             </div>
         </section>
 
@@ -121,41 +108,21 @@
                 </p>
                 
                 <div class="slideshow">
-                    <div class="slide active">
+                    {% for book in books %}
+                    <div class="slide {% if loop.first %} active{% endif %}">
                         <div class="content-courses">
-                            <img src="./assets/orbook.jpeg" alt="Operation Research book">
+                            <img src="{{url_for('static', filename=book.img_src)}}" alt="{{book.alt_text}}">
                             <div class="actions">
-                                <a href="#" class="download-btn">Download Book <i class="fa-solid fa-download"></i></a>
-                                <a href="#" class="save-btn">Save to Library <i class="fa-solid fa-save"></i></a>
+                                <a href="{{book.download_link}}" class="download-btn">Download Book</a>
+                                <a href="{{book.save_link}}" class="save-btn">Save to Library</a>
                             </div>
                         </div>
                     </div>
-        
-                    <div class="slide">
-                        <div class="content-courses">
-                            <img src="./assets/eco101.jpeg" alt="Economics book">
-                            <div class="actions">
-                                <a href="#" class="download-btn">Download Book <i class="fa-solid fa-download"></i></a>
-                                <a href="#" class="save-btn">Save to Library <i class="fa-solid fa-save"></i></a>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="slide">
-                        <div class="content-courses">
-                            <img src="./assets/orbook.jpeg" alt="Business Administration book">
-                            <div class="actions">
-                                <a href="#" class="download-btn">Download Book <i class="fa-solid fa-download"></i></a>
-                                <a href="#" class="save-btn">Save to Library <i class="fa-solid fa-save"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
-
                 <a class="next" onclick="changeSlide(1)"><i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </section>
-        
 
         <section>
             <div class="motivation-section">
@@ -180,8 +147,6 @@
         </section>
     </div>
 
-
-
     <footer>
         <div class="footer-icons">
             <a href="#"><i class="fab fa-facebook" style="color: rgb(28, 61, 223);"></i></a>
@@ -192,6 +157,6 @@
         <p>&copy; 2024 Cavendish University Zambia. All rights reserved.</p>
     </footer>
 
-    <script src="./js/index.js"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </body>
 </html>
