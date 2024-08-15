@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CavLearn</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.5.2-web/css/all.min.css') }}">
+    <title>libTech</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/fontawesome-free-6.5.2-web/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
                 <a href="index.html">
-                    cav<span class="highlight">Learn</span>
+                    libra<span class="highlight">Tech</span>
                 </a>
             </div>
             <nav class="nav-links">
@@ -56,8 +56,8 @@
                 <i id="bar" class="fa-solid fa-bars" onclick="menuBar()"></i>
             </div>
         </div>
-        <div id="onMobile" class="search-bar">
-            <form action="{{ url_for('search') }}" method="GET">
+        <div class="search-container">
+            <form action="" method="GET">
                 <input type="text" name="query" placeholder="Search books, articles..." required>
                 <button type="submit"><i class="fa-solid fa-search" id="faSearch"></i></button>
             </form>
@@ -68,13 +68,14 @@
     <div class="main-container">
         <main>
             <section class="intro">
-                <h1>Welcome to cav<span class="highlight">Learn</span>: Your Gateway to Knowledge</h1>
+                <h1>Welcome to libra<span class="highlight">Tech</span>: Your Gateway to Knowledge</h1>
                 <p>We believe that learning should be limitless. Dive into a world where books, research, and academic resources are just a click away.</p>
-                <a href="catalog.html" class="cta-button">Start Exploring</a>
+                <a href="catalog.html" class="cta-button">Start Exploring <i class="fa-solid fa-arrow-right"></i></a>
             </section>
         </main>
 
         <section>
+            <!--Section of books posted by admins-->
             <div class="course-books">
                 <section class="subject-category">
                     <h3>Recently posted</h3>
@@ -95,7 +96,7 @@
                             <p>This book explores the key factors that allow some companies to achieve long-term success and others to falter.</p>
                         </li>
                     </ul>
-                    <a href="">See More</a>
+                    <a href="">See More <i class="fa-solid fa-arrow-down"></i></a>
                 </section>
             </div>
         </section>
@@ -108,19 +109,19 @@
                 </p>
                 
                 <div class="slideshow">
-                    {% for book in books %}
-                    <div class="slide {% if loop.first %} active{% endif %}">
+                    <!--Loop to display different types of books-->
+                    <div class="slide">
                         <div class="content-courses">
-                            <img src="{{url_for('static', filename=book.img_src)}}" alt="{{book.alt_text}}">
+                            <img src="../static/assets/eco101.jpeg" alt="{{book.alt_text}}">
                             <div class="actions">
-                                <a href="{{book.download_link}}" class="download-btn">Download Book</a>
-                                <a href="{{book.save_link}}" class="save-btn">Save to Library</a>
+                                <a href="{{book.download_link}}" class="download-btn">Download Book <i class="fa-solid fa-download"></i></a>
+                                <a href="{{book.save_link}}" class="save-btn">Save to Library <i class="fa-solid fa-save"></i></a>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
+                    <!--End loop-->
                 </div>
-                <a class="next" onclick="changeSlide(1)"><i class="fa-solid fa-arrow-right"></i></a>
+                <a class="next" onclick="changeSlide(1)"><i class="fa-solid fa-arrow-right" style="color: #007bff;"></i></a>
             </div>
         </section>
 
@@ -133,14 +134,17 @@
                     <div class="motivation-card">
                         <h3>Unlimited Access</h3>
                         <p>Gain 24/7 access to a vast collection of books and past papers.</p>
+                        <i class="fa-solid fa-star" style="color: #ffd700;"></i>
                     </div>
                     <div class="motivation-card">
                         <h3>Personalized Learning</h3>
                         <p>Tailor your learning experience with custom reading lists, bookmarks, and personalized recommendations.</p>
+                        <i class="fa-solid fa-infinity"  style="color: #007bff;"></i>
                     </div>
                     <div class="motivation-card">
                         <h3>Expert Resources</h3>
                         <p>Benefit from lecturers, ensuring that you have the most relevant and reliable information at your fingertips.</p>
+                        <i class="fa-solid fa-unlock" style="color: #28a746;"></i>
                     </div>
                 </div>
             </div>
@@ -157,6 +161,6 @@
         <p>&copy; 2024 Cavendish University Zambia. All rights reserved.</p>
     </footer>
 
-    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script src="../static/js/index.js"></script>
 </body>
 </html>

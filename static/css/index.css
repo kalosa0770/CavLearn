@@ -442,7 +442,6 @@ nav ul {
 .intro a {
     text-decoration: none;
     color: #127eb3;
-    padding: 12px;
     font-size: 1.5rem;
 }
 
@@ -723,7 +722,7 @@ footer p {
     }
     
     .header-container .logo a {
-        font-size: 1.9rem;
+        font-size: 1.6rem;
         text-decoration: none;
         color: black;
     }
@@ -834,44 +833,63 @@ footer p {
 
     .main-container {
         width: 100%;
-        margin: 0 auto;
+        /* margin: 0 auto;
         align-items: center;
         justify-content: center;
-        text-align: center;
+        text-align: center; */
         padding: 10px;
     }
 
     .intro {
         width: 100%;
-        padding: 12px;
         margin-top: 30px;
     }
     
     .intro h1 {
-        font-size: 1.2rem;
+        font-size: 0.9rem;
         color: #000;
         font-weight: 500;
-        text-align: center;
+        text-align: left;
         text-transform: uppercase;
         letter-spacing: 4px;
     }
     
     .intro p {
-        font-size: 1.7rem;
+        font-size: 1.2rem;
         font-weight: lighter;
         color: rgb(242, 50, 2);
         padding: 0;
         line-height: 1.5;
         letter-spacing: 4px;
-        text-align: center;
+        text-align: left;
         padding: auto;
         width: 100%;
+        margin-top: 20px;
     }
 
     .intro a {
         font-size: 1.3rem;
         text-transform: lowercase;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        display: flex;
+        margin-right: 20px;
     }
+
+    .fa-solid.fa-arrow-right {
+        font-size: 0.9rem;
+        margin-left: 10px;
+        padding-top: 6px;
+    }
+/* 
+    .cta-button {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 20px;
+    } */
 
     .intro i {
         font-size: 1rem;
@@ -923,7 +941,7 @@ footer p {
     }
 
     .subject-category a {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .subject-category i {
@@ -931,10 +949,13 @@ footer p {
     }
 
     .search-container {
+        display: none;
+    }
+
+    /* .search-container {
         position: relative;
         display: flex;
         align-items: center;
-        margin-top: 20px;
         margin-top: 20px;
         width: 100%;
     }
@@ -972,7 +993,7 @@ footer p {
 
     #search-input {
         width: 500px;
-        height: 40px;
+        height: 30px;
         margin-left: 20px;
        
     }
@@ -980,7 +1001,7 @@ footer p {
     .search-input.active {
         width: 400px;
         opacity: 1;
-    }
+    } */
 
     .slideshow {
         display: flex;
@@ -995,8 +1016,9 @@ footer p {
     }
 
     .what-do-you-want p {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         color: #000;
+        font-weight: bold;
         text-align: center;
         width: 100%;
     }
@@ -1036,7 +1058,7 @@ footer p {
         color: white;
         transition: background-color 0.3s ease;
         text-align: center;
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
 
     .download-btn {
@@ -1055,6 +1077,8 @@ footer p {
         background-color: #218838;
     }
 
+    /* motivation section */
+
     .motivation-section {
         background-color: none;
         padding: 50px 20px;
@@ -1069,6 +1093,7 @@ footer p {
         color: #000;
         font-weight: lighter;
         margin-bottom: 20px;
+        text-align: left;
     }
     
     .motivation-section p {
@@ -1078,6 +1103,7 @@ footer p {
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
+        text-align: left;
     }
     
     .motivation-cards {
@@ -1099,14 +1125,27 @@ footer p {
     }
     
     .motivation-card h3 {
-        font-size: 1.5rem;
-        color: #007bff;
+        font-size: 1.2rem;
+        color: #000;
+        font-weight: bold;
         margin-bottom: 10px;
+        text-align: center;
     }
     
     .motivation-card p {
         font-size: 1rem;
         color: #666;
+        text-align: center;
+    }
+
+    .motivation-card i {
+        font-size: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
     footer {
