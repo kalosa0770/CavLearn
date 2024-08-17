@@ -12,7 +12,7 @@
         <div class="header-container">
             <div class="logo">
                 <a href="index.html">
-                    libra<span class="highlight">Tech</span>
+                    libra<span class="highlight">Tech.</span>
                 </a>
             </div>
             <nav class="nav-links">
@@ -30,8 +30,14 @@
                         </ul>
                     </li>
                     <div class="login-links">
-                        <li><a href="{{url_for('login')}}">Login <i class="fa-solid fa-user"></i></a></li>
-                        <li><a href="forums.html">Signup <i class="fa-solid fa-user-plus"></i></a></li>
+                        <div class="login-detail">
+                            <li><a href="{{url_for('login')}}"><i class="fa-solid fa-sign-in-alt"></i></a></li>
+                            <a href="">Login</a>
+                        </div>
+                        <div class="login-detail">
+                            <li><a href="forums.html"><i class="fa-solid fa-user-plus"></i></a></li>
+                            <a href="">Signup</a>
+                        </div>
                     </div>   
                 </ul>
                 <ul id="onMobile">
@@ -47,8 +53,8 @@
                         </ul>
                     </li>
                     <div class="login-links">
-                        <li><a href="{{url_for('login')}}">Login <i class="fa-solid fa-user"></i></a></li>
-                        <li><a href="forums.html">Signup <i class="fa-solid fa-user-plus"></i></a></li>
+                        <li><a href="{{url_for('login')}}"><i class="fa-solid fa-user"></i></a></li>
+                        <li><a href="forums.html"><i class="fa-solid fa-user-plus"></i></a></li>
                     </div>   
                 </ul>
             </nav>
@@ -57,9 +63,9 @@
             </div>
         </div>
         <div class="search-container">
-            <form action="" method="GET">
-                <input type="text" name="query" placeholder="Search books, articles..." required>
-                <button type="submit"><i class="fa-solid fa-search" id="faSearch"></i></button>
+            <form action="" method="GET" id="searchForm">
+                <input type="text" name="query"  placeholder="Search books, articles..." required>
+                <i class="fa-solid fa-search" id="faSearch"></i>
             </form>
         </div>
         
@@ -68,7 +74,7 @@
     <div class="main-container">
         <main>
             <section class="intro">
-                <h1>Welcome to libra<span class="highlight">Tech</span>: Your Gateway to Knowledge</h1>
+                <h1>Welcome to libraTech: Your Gateway to Knowledge</h1>
                 <p>We believe that learning should be limitless. Dive into a world where books, research, and academic resources are just a click away.</p>
                 <a href="catalog.html" class="cta-button">Start Exploring <i class="fa-solid fa-arrow-right"></i></a>
             </section>
@@ -107,9 +113,56 @@
                     What do you want to achieve today? Are you looking for specific study materials, 
                     exploring new topics, or simply browsing for inspiration?
                 </p>
+                <div class="selection">
+                    <form>
+                        <label for="courses">Choose a course:</label>
+                        <select name="courses" id="courses">
+                            <option value="">Select a course</option>
+                            <option value="computer-science">Computer Science</option>
+                            <option value="economics">Economics</option>
+                            <option value="business-administration">Business Administration</option>
+                            <option value="purchasing-supply">Purchasing & Supply</option>
+                        </select>
+                    </form>
                 
-                <div class="slideshow">
-                    <!--Loop to display different types of books-->
+                    <div id="computer-science" class="content">
+                        <div class="content-courses">
+                            <img src="../static/assets/eco101.jpeg" alt="{{book.alt_text}}">
+                            <div class="actions">
+                                <a href="{{book.download_link}}" class="download-btn">Download Book <i class="fa-solid fa-download"></i></a>
+                                <a href="{{book.save_link}}" class="save-btn">Save to Library <i class="fa-solid fa-save"></i></a>
+                            </div>
+                            <a class="next" onclick="changeSlide(1)"><i class="fa-solid fa-arrow-right" style="color: #007bff;"></i></a>
+                        </div>
+                    </div>
+                
+                    <div id="economics" class="content">
+                        <div class="content-courses">
+                            <img src="../static/assets/eco101.jpeg" alt="{{book.alt_text}}">
+                            <div class="actions">
+                                <a href="{{book.download_link}}" class="download-btn">Download Book <i class="fa-solid fa-download"></i></a>
+                                <a href="{{book.save_link}}" class="save-btn">Save to Library <i class="fa-solid fa-save"></i></a>
+                            </div>
+                            <a class="next" onclick="changeSlide(1)"><i class="fa-solid fa-arrow-right" style="color: #007bff;"></i></a>
+                        </div>
+                    </div>
+                
+                    <div id="business-administration" class="content">
+                        <h2>Business Administration</h2>
+                        <p>Welcome to the Business Administration section. Find resources on management, marketing, finance, and organizational behavior.</p>
+                        <a class="next" onclick="changeSlide(1)"><i class="fa-solid fa-arrow-right" style="color: #007bff;"></i></a>
+                    </div>
+                
+                    <div id="purchasing-supply" class="content">
+                        <h2>Purchasing & Supply</h2>
+                        <p>Welcome to the Purchasing & Supply section. Learn about supply chain management, procurement strategies, and logistics.</p>
+                        <a class="next" onclick="changeSlide(1)"><i class="fa-solid fa-arrow-right" style="color: #007bff;"></i></a>
+                    </div>
+                    
+                </div>
+                
+                <!-- <div class="slideshow">
+                    <!--Loop to display different types of books--
                     <div class="slide">
                         <div class="content-courses">
                             <img src="../static/assets/eco101.jpeg" alt="{{book.alt_text}}">
@@ -119,9 +172,9 @@
                             </div>
                         </div>
                     </div>
-                    <!--End loop-->
+                    <!--End loop--
                 </div>
-                <a class="next" onclick="changeSlide(1)"><i class="fa-solid fa-arrow-right" style="color: #007bff;"></i></a>
+                <a class="next" onclick="changeSlide(1)"><i class="fa-solid fa-arrow-right" style="color: #007bff;"></i></a> -->
             </div>
         </section>
 
@@ -139,7 +192,7 @@
                     <div class="motivation-card">
                         <h3>Personalized Learning</h3>
                         <p>Tailor your learning experience with custom reading lists, bookmarks, and personalized recommendations.</p>
-                        <i class="fa-solid fa-infinity"  style="color: #007bff;"></i>
+                        <i class="fa-solid fa-infinity"  style="color: #ff0019;"></i>
                     </div>
                     <div class="motivation-card">
                         <h3>Expert Resources</h3>

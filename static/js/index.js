@@ -1,14 +1,4 @@
-// // Menu Mobile Bar
-// function menuBar() {
-//     const menubar = document.querySelector(".sideBar")
-//     menubar.style.display = 'flex'
-// }
 
-// // Close Menu Bar
-// function closeBar() {
-//     const menubar = document.querySelector(".sideBar")
-//     menubar.style.display = 'none'
-// }
 
 function menuBar() {
     const sideBar = document.querySelector('.sideBar');
@@ -31,16 +21,38 @@ function closeBar() {
     const sideBar = document.querySelector('.sideBar');
     const icon = document.getElementById('bar');
 
-    // Remove the visible class to close the sidebar
     sideBar.classList.remove('visible');
-
-    // Change the icon back to bars
+  
     icon.classList.remove('fa-times');
     icon.classList.add('fa-bars');
 }
 
-function toggleSearch() {
-    const searchInput = document.getElementById("search-input");
-    searchInput.classList.toggle("active");
-    searchInput.focus();
-}
+document.getElementById('faSearch').addEventListener('click', function() {
+    document.getElementById('searchForm').submit();
+});
+
+document.querySelector('input[name="query"]').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();  
+        document.getElementById('searchForm').submit();
+    }
+});
+
+document.getElementById('courses').addEventListener('change', function() {
+    // Hide all content divs
+    var contents = document.querySelectorAll('.content');
+    contents.forEach(function(content) {
+        content.style.display = 'none';
+    });
+
+    // Get the selected value
+    var selectedCourse = this.value;
+
+    // Show the content corresponding to the selected course
+    if (selectedCourse) {
+        var contentToShow = document.getElementById(selectedCourse);
+        if (contentToShow) {
+            contentToShow.style.display = 'block';
+        }
+    }
+});
