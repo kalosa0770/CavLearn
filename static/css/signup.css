@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #f1f1f1;
+}
+
+.form-container {
+    width: 80%;
+    height: max-content;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 100px;
+}
+
+.form-container h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container form .input-container {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container form .input-container input {
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.form-container form .input-container label {
+    padding: 10px;
+    font-size: 2.5rem;
+    color: #1273be;
+}
+
+.form-container form .input-container label i {
+    font-size: 1.5rem;
+    padding: 8px;
+}
+
+.form-container form .input-container input[type="submit"] {
+    background: #1273be;
+    color: #fff;
+    font-size: 2.5rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.form-container form .input-container input[type="submit"]:hover {
+    background: #0f5c8e;
+}
+
+.form-container form .input-container input[type="submit"]:active {
+    background: #0f5c8e;
+}
+
+.form-container form .input-container .gender {
+    display: flex;
+    margin-top: 20px;
+}
+
+.form-container form .input-container .gender label {
+    margin-right: 20px;
+}
+
+.form-container form .input-container .gender input[type="radio"] {
+    margin-right: 10px;
+   transform: scale(1.5);
+}
+
+.form-container form .input-container .gender .male-gender {
+    margin-right: 20px;
+}
+
+.form-container form .input-container input::placeholder {
+    font-size: 1.6rem;
+}
+
+.form-container form input[type="text"] {
+    font-size: 1.6rem;
+}
+
+.form-container form input[type="date"] {
+    font-size: 1.6rem;
+}
+
+.form-container form input[type="password"] {
+    font-size: 1.6rem;
+}
+
+.form-container form button {
+    padding: 10px;
+    border: none;
+    background: #1273be;  
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    max-width: 200px;
+    border-radius: 8px;
+}
+
+.login-container form button:hover {
+    background: #0a5a8a;
+}
+
+.form-container p {
+    font-size: 1.6rem;
+    margin-top: 20px;
+}
+
+.form-container p a {
+    color: red;
+    text-underline-offset: 0.2em;
+}
+
+@media screen and (max-width: 1200px) {
+    main {
+        margin: 20px;
+        
+    }
+
+    .form-container {
+        width: 100%;
+        height: max-content;
+        padding: 40px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .form-container h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    
+    .form-container form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .form-container form .input-container {
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .form-container form .input-container input {
+        padding: 10px;
+        border: none;
+        outline: none;
+    }
+    
+    .form-container form .input-container label {
+        padding: 10px;
+        font-size: 1rem;
+        color: #1273be;
+    }
+    
+    .form-container form .input-container label i {
+        font-size: 1.2rem;
+        padding: 8px;
+    }
+    
+    .form-container form .input-container input[type="submit"] {
+        background: #1273be;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        border: none;
+        border-radius: 2px;
+        padding: 10px;
+        margin-top: 20px;
+    }
+    
+    .form-container form .input-container input[type="submit"]:hover {
+        background: #0f5c8e;
+    }
+    
+    .form-container form .input-container input[type="submit"]:active {
+        background: #0f5c8e;
+    }
+    
+    .form-container form .input-container .gender {
+        display: flex;
+        margin-top: 20px;
+    }
+    
+    .form-container form .input-container .gender label {
+        margin-right: 20px;
+    }
+    
+    .form-container form .input-container .gender input[type="radio"] {
+        margin-right: 2px;
+       transform: scale(1);
+    }
+    
+    .form-container form .input-container .gender .male-gender {
+        margin-right: 20px;
+    }
+    
+    .form-container form .input-container input::placeholder {
+        font-size: 1rem;
+    }
+    
+    .form-container form input[type="text"] {
+        font-size: 1.1rem;
+    }
+    
+    .form-container form input[type="date"] {
+        font-size: 1.1rem;
+    }
+    
+    .form-container form input[type="password"] {
+        font-size: 1.1rem;
+    }
+    
+    .form-container form button {
+        padding: 10px;
+        border: none;
+        background: #1273be;  
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        max-width: 200px;
+        border-radius: 8px;
+    }
+    
+    .login-container form button:hover {
+        background: #0a5a8a;
+    }
+    
+    .form-container p {
+        font-size: 1.3rem;
+        margin-top: 20px;
+    }
+    
+    .form-container p a {
+        color: red;
+        text-underline-offset: 0.2em;
+    }
+    
+}
