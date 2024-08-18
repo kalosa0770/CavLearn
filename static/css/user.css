@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f1f1f1;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.user-container {
+    width: 80%;
+    height: max-content;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 100px;
+}
+
+.user-details {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #000;
+    border-width: 100%;
+}
+
+.user-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    text-decoration: overline;
+}
+
+.user-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    text-decoration: overline;
+    border-top: 2px solid #000;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.user-info h2 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    padding: 0px 20px;
+}
+
+.user-info p {
+    font-size: 1.8rem;
+    color: #777;
+    display: flex;
+   
+}
+
+.user-icons p i {
+    font-size: 1.8rem;
+    
+}
+
+.user-icons {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.user-icons button {
+    background: none;
+    color: #000;
+    border: 1px solid #777;
+    border-radius: 5px;
+    padding: 10px 40px;
+    cursor: pointer;
+    width: 300px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.user-icons p button a {
+    text-decoration: none;
+    color: #777;
+}
+
+
+.fa-solid {
+    padding: 8px;
+}
+
+.user-books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.user-books h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.user-books .book {
+    margin: 5px;
+    overflow: hidden;
+}
+
+.book .book-image {
+    width: 100%;
+}
+
+.book .library button {
+    background: none;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 40px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.book .library button a {
+    text-decoration: none;
+    color: #777;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.book .library button a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; 
+    width: 0;
+    height: 2px; 
+    background-color: #000;
+    transition: width 0.5s ease-in-out;
+}
+
+.book .library button a:hover::after {
+    width: 100%;
+}
+
+.library button.active a {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 1200px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f1f1f1;
+    }
+    
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 15px;
+    }
+    
+    .user-container {
+        width: 100%;
+        height: max-content;
+        padding: 40px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 100px;
+    }
+    
+    .user-details {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-bottom: 1px solid #000;
+        border-width: 100%;
+    }
+    
+    .user-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        text-decoration: overline;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .user-image img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        text-decoration: overline;
+        border-top: 2px solid #000;
+    }
+    
+    .user-info {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        gap: 5px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+       
+    }
+    
+    .user-info h2 {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        padding: none;
+        text-align: center;
+    }
+    
+    .user-info .icons p {
+        font-size: 1.1rem;
+        color: #777;
+        display: flex;
+        flex-direction: column;
+       
+    }
+    
+    .user-icons .icons p i {
+        font-size: 1rem;
+        
+    }
+    
+    .user-icons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .user-icons .icons {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .user-icons button {
+        background: none;
+        color: #000;
+        border: 1px solid #777;
+        border-radius: 5px;
+        padding: 10px 10px;
+        cursor: pointer;
+        width: 150px;
+        font-size: 1rem;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        text-decoration: none;
+    }
+    
+    .user-icons button a {
+        text-decoration: none;
+        color: #777;
+        
+    }
+    
+    
+    .fa-solid {
+        padding: 8px;
+    }
+    
+    .user-books {
+        display: flex;;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    
+    
+    .user-books .book {
+        margin: 5px;
+        overflow: hidden;
+    }
+    
+    .book .book-image {
+        width: 100%;
+    }
+    
+    .book .library button {
+        background: none;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 10px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .book .library button a {
+        text-decoration: none;
+        color: #777;
+        text-transform: uppercase;
+        position: relative;
+    }
+    
+    .book .library button a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px; 
+        width: 0;
+        height: 2px; 
+        background-color: #000;
+        transition: width 0.5s ease-in-out;
+    }
+    
+    .book .library button a:hover::after {
+        width: 100%;
+    }
+    
+}
+
