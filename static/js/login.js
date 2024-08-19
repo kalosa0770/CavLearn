@@ -15,7 +15,7 @@ function userLogin() {
     
 
     if (username === 'user' && email === '' && password === 'password') {
-        window.location.href = './user.html';
+        window.location.href = './home.html';
     } else {
         alert('Invalid credentials');
     }
