@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../static/fontawesome-free-6.5.2-web/css/all.min.css">
+    <script src="../static/fontawesome-free-6.5.2-web/js/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="../static/css/home.css">
 </head>
 <body>
@@ -71,8 +72,8 @@
                                             <li>
                                                 
                                                 <div class="search-bar">
-                                                    <i class="fa-solid fa-search"></i>
-                                                    <input type="search" name="search" id="search" placeholder="What do you want?">
+                                                    
+                                                    <input type="search" name="search" id="search" placeholder="What do you want?"><i class="fa-solid fa-search"></i>
                                                 </div>
                                             </li>
                                         </ul>
@@ -98,9 +99,118 @@
             <div class="main-content-header">
                 <h1>Featured Content</h1>
             </div>
-            <div class="main-content">
-                <i class="fa-solid fa-arrow-left"></i>
+           <div class="main-content">
+                
                 <div class="main-content-body">
+                    <i class="fa-solid fa-arrow-left" id="left-change"></i>
+                    <div class="book-card">
+                         <div class="book-card-image">
+                            <img src="../static/assets/blackstuden2.jpeg" alt="">
+                        </div>
+                        <div class="book-card-details">
+                            <h3>Programming for dummies</h3>
+                            <p>Elijah</p>
+                            <p>PDF</p>
+                            <button>Download</button>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-card-image">
+                            <img src="../static/assets/blackstudent1.jpeg" alt="">
+                        </div>
+                        <div class="book-card-details">
+                            <h3>ECO101</h3>
+                            <p>PDF</p>
+                            <button>View</button>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-card-image">
+                            <img src="../static/assets/blackstudent1.jpeg" alt="">
+                        </div>
+                        <div class="book-card-details">
+                            <h3>Mathematics for Computing</h3>
+                            <p>PDF</p>
+                            <button>Download</button>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-card-image">
+                           <img src="../static/assets/blackstuden2.jpeg" alt="">
+                       </div>
+                       <div class="book-card-details">
+                           <h3>Enterprise Networking</h3>
+                           <p>Elijah</p>
+                           <p>PDF</p>
+                           <button>Download</button>
+                       </div>
+                   </div>
+                   <div class="book-card">
+                    <div class="book-card-image">
+                       <img src="../static/assets/blackstuden2.jpeg" alt="">
+                   </div>
+                   <div class="book-card-details">
+                       <h3>Robotics</h3>
+                       <p>RB401</p>
+                       <p>PDF</p>
+                       <button>Download</button>
+                   </div>
+               </div>
+               <div class="book-card">
+                <div class="book-card-image">
+                   <img src="../static/assets/blackstuden2.jpeg" alt="">
+               </div>
+               <div class="book-card-details">
+                   <h3>Data Structures</h3>
+                   <p>Priya</p>
+                   <p>Book</p>
+                   <button>Download</button>
+               </div>
+                </div>
+                    <i class="fa-solid fa-arrow-right" id="right-change"></i>
+                </div>
+                
+            </div>
+            <!-- <div class="main-content-header">
+                <h1>Recent Content</h1>
+            </div>
+            <div class="main-content">
+                
+                <div class="main-content-body">
+                    <i class="fa-solid fa-arrow-left" id="left-change"></i>
+                    <div class="book-card">
+                        <div class="book-card-image">
+                            <img src="../static/assets/blackstuden2.jpeg" alt="">
+                        </div>
+                        <div class="book-card-details">
+                            <h3>Programming for dummies</h3>
+                            <p>Elijah</p>
+                            <p>PDF</p>
+                            <button>Download</button>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-card-image">
+                            <img src="../static/assets/blackstuden2.jpeg" alt="">
+                        </div>
+                        <div class="book-card-details">
+                            <h3>Programming for dummies</h3>
+                            <p>Elijah</p>
+                            <p>PDF</p>
+                            <button>Download</button>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-card-image">
+                            <img src="../static/assets/blackstuden2.jpeg" alt="">
+                        </div>
+                        <div class="book-card-details">
+                            <h3>Programming for dummies</h3>
+                            <p>Elijah</p>
+                            <p>PDF</p>
+                            <button>Download</button>
+                        </div>
+                    </div>
                     <div class="book-card">
                         <div class="book-card-image">
                             <img src="../static/assets/blackstuden2.jpeg" alt="">
@@ -124,50 +234,167 @@
                     </div>
                     <div class="book-card">
                         <div class="book-card-image">
-                            <img src="../static/assets/blackstudent3.webp" alt="">
+                            <img src="../static/assets/blackstudent1.jpeg" alt="">
                         </div>
                         <div class="book-card-details">
-                            <h3>Operations Research</h3>
-                            <p>By Oscar</p>
+                            <h3>ECO101</h3>
+                            <p>PDF</p>
+                            <button>View</button>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right" id="right-change"></i>
+                </div>
+                
+            </div>
+            <div class="main-content-header">
+                <h1>Course Content</h1>
+            </div>
+            <div class="main-content">
+                
+                <div class="main-content-body">
+                    <i class="fa-solid fa-arrow-left" id="left-change"></i>
+                    <div class="book-card">
+                        <div class="book-card-image">
+                            <img src="../static/assets/blackstuden2.jpeg" alt="">
+                        </div>
+                        <div class="book-card-details">
+                            <h3>Programming for dummies</h3>
+                            <p>Elijah</p>
                             <p>PDF</p>
                             <button>Download</button>
                         </div>
                     </div>
                     <div class="book-card">
                         <div class="book-card-image">
-                            <img src="../static/assets/blackstudent4.jpeg" alt="">
+                            <img src="../static/assets/blackstuden2.jpeg" alt="">
                         </div>
                         <div class="book-card-details">
-                            <h3>Computer Ethics</h3>
-                            <p>COM223</p>
+                            <h3>Programming for dummies</h3>
+                            <p>Elijah</p>
                             <p>PDF</p>
-                            <button>Save</button>
+                            <button>Download</button>
                         </div>
                     </div>
                     <div class="book-card">
                         <div class="book-card-image">
-                            <img src="../static/assets/eco101.jpeg" alt="">
+                            <img src="../static/assets/blackstuden2.jpeg" alt="">
                         </div>
                         <div class="book-card-details">
-                            <h3>Marketing</h3>
-                            <p>BBA222</p>
+                            <h3>Programming for dummies</h3>
+                            <p>Elijah</p>
+                            <p>PDF</p>
+                            <button>Download</button>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-card-image">
+                            <img src="../static/assets/blackstuden2.jpeg" alt="">
+                        </div>
+                        <div class="book-card-details">
+                            <h3>Programming for dummies</h3>
+                            <p>Elijah</p>
+                            <p>PDF</p>
+                            <button>Download</button>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-card-image">
+                            <img src="../static/assets/blackstudent1.jpeg" alt="">
+                        </div>
+                        <div class="book-card-details">
+                            <h3>ECO101</h3>
                             <p>PDF</p>
                             <button>View</button>
                         </div>
                     </div>
                     <div class="book-card">
                         <div class="book-card-image">
-                            <img src="../static/assets/orbook.jpeg" alt="">
+                            <img src="../static/assets/blackstudent1.jpeg" alt="">
                         </div>
                         <div class="book-card-details">
-                            <h3>Mthematics for Computing</h3>
-                            <p>COM211</p>
+                            <h3>ECO101</h3>
                             <p>PDF</p>
                             <button>View</button>
                         </div>
                     </div>
+                    <i class="fa-solid fa-arrow-right" id="right-change"></i>
                 </div>
-                <i class="fa-solid fa-arrow-right"></i>
+                
+            </div>
+            <div class="main-content-header">
+                <h1>Other Content</h1>
+            </div>
+            <div class="main-content">
+                
+                <div class="main-content-body">
+                    <i class="fa-solid fa-arrow-left" id="left-change"></i>
+                    <div class="book-card">
+                        <div class="book-card-image">
+                            <img src="../static/assets/blackstuden2.jpeg" alt="">
+                        </div>
+                        <div class="book-card-details">
+                            <h3>Programming for dummies</h3>
+                            <p>Elijah</p>
+                            <p>PDF</p>
+                            <button>Download</button>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-card-image">
+                            <img src="../static/assets/blackstudent1.jpeg" alt="">
+                        </div>
+                        <div class="book-card-details">
+                            <h3>ECO101</h3>
+                            <p>PDF</p>
+                            <button>View</button>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-card-image">
+                            <img src="../static/assets/blackstuden2.jpeg" alt="">
+                        </div>
+                        <div class="book-card-details">
+                            <h3>Programming for dummies</h3>
+                            <p>Elijah</p>
+                            <p>PDF</p>
+                            <button>Download</button>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-card-image">
+                            <img src="../static/assets/blackstuden2.jpeg" alt="">
+                        </div>
+                        <div class="book-card-details">
+                            <h3>Programming for dummies</h3>
+                            <p>Elijah</p>
+                            <p>PDF</p>
+                            <button>Download</button>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-card-image">
+                            <img src="../static/assets/blackstuden2.jpeg" alt="">
+                        </div>
+                        <div class="book-card-details">
+                            <h3>Programming for dummies</h3>
+                            <p>Elijah</p>
+                            <p>PDF</p>
+                            <button>Download</button>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-card-image">
+                            <img src="../static/assets/blackstudent1.jpeg" alt="">
+                        </div>
+                        <div class="book-card-details">
+                            <h3>ECO101</h3>
+                            <p>PDF</p>
+                            <button>View</button>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right" id="right-change"></i>
+                </div> -->
+                
             </div>
         </div>
     </main>

@@ -22,9 +22,9 @@ header {
 
 .header-container h3 {
     text-align: center;
-    font-size: 5.5rem;
+    font-size: 1.7rem;
     color: #000;
-    margin-right: 500px;
+    margin-right: 200px;
 }
 
 .tech {
@@ -36,7 +36,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 250px;
+    margin-right: 200px;
 }
 
 .header-container ul li {
@@ -48,7 +48,7 @@ header {
 .header-container ul li a {
     text-decoration: none;
     color: #333;
-    font-size: 1.8rem;
+    font-size: 0.8rem;
 }
 
 .browse-dropdown {
@@ -57,9 +57,10 @@ header {
 }
 
 .browse-dropdown p {
-    font-size: 1.8rem;
+    font-size: 0.8rem;
     color: #333;
     cursor: pointer;
+    display: flex;
 }
 
 .browse-dropdown-content {
@@ -100,6 +101,7 @@ header {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    font-size: 0.8rem;
 }
 
 .dropdown-search-content a:hover {
@@ -108,18 +110,17 @@ header {
 
 select {
     padding: none;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     border: none;
     border-radius: 4px;
-    height: 80px;
-    background-color: #f1f1f1;
+    height: 20px;
+    background-color: none;
     outline: none;
 }
 
 select option {
-    font-size: 1.8rem;
-    gap: 20px;
-    background-color: #fff;
+    font-size: 0.8rem;
+    background-color: none;
     color: #000;
 }
 
@@ -128,19 +129,19 @@ select option {
     justify-content: center;
     align-items: center;
     margin: 1rem 0;
-    height: 80px;
-    background-color: #f1f1f1;
-    border: 2px solid #f1f1f1;
+    height: 40px;
+    background-color: none;
+    border: none;
     border-radius: 4px;
 }
 
 .search-input input {
-    width: 400px;
+    width: 100px;
     padding: 0.5rem;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     border: none;
     border-radius: 4px;
-    height: 80px;
+    height: 40px;
     background-color: #f1f1f1;
     outline: none;
 }
@@ -148,7 +149,7 @@ select option {
 .search-input input[type="search"] {
     width: 400px;
     padding: 0.5rem;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     border: none;
     border-radius: 4px;
     height: 80px;
@@ -156,7 +157,7 @@ select option {
 }
 
 .search-input input::placeholder {
-    font-size: 1.8rem;
+    font-size: 0.8rem;
 }
 
 .search-input button {
@@ -168,7 +169,7 @@ select option {
 }
 
 .fas.fa-search {
-    font-size: 1.8rem;
+    font-size: 0.8rem;
     color: #000;
     background-color: none;
 }
@@ -179,6 +180,10 @@ select option {
     color: #000;
     border: none;
     cursor: pointer;
+}
+
+.dropdown-search {
+    background-color: none;
 }
 
 
@@ -200,7 +205,7 @@ select option {
     background-color: #f9f9f9;
     width: max-content;
     max-width: max-content;
-    height: 100vh;
+    height: max-content;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     padding: 20px;
@@ -208,7 +213,7 @@ select option {
 }
 
 #settings {
-    font-size: 1.8rem;
+    font-size: 0.8rem;
     cursor: pointer;
 }
 
@@ -228,7 +233,7 @@ select option {
 
 #settings-content nav ul i {
     padding: 8px;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     color: #000;
 }
 
@@ -248,7 +253,7 @@ select option {
 #settings-content nav ul li a {
     text-decoration: none;
     color: #127eb3;
-    font-size: 1.8rem;
+    font-size: 0.8rem;
     padding: 8px;
 }
 
@@ -277,7 +282,7 @@ select option {
 }
 
 .browse-catalog p {
-    font-size: 1.8rem;
+    font-size: 0.8rem;
     color: #127eb3;
     cursor: pointer;
     
@@ -289,6 +294,7 @@ select option {
 
 .search-bar {
     display: flex;
+    justify-content: space-between;
     margin: 1rem 0;
     width: 100%;
     height: 80px;
@@ -299,17 +305,17 @@ select option {
 
 .search-bar i {
     margin: 1rem;
-    padding: 8px;
-    font-size: 1.8rem;
+    font-size: 0.8rem;
     color: #000;
     background-color: none;
     cursor: pointer;
 }
 
+
 .search-bar input {
     width: 400px;
     padding: 0.5rem;
-    font-size: 1.8rem;
+    font-size: 0.8rem;
     border: none;
     border-radius: 4px;
     height: 80px;
@@ -320,7 +326,7 @@ select option {
 .search-bar input[type="search"] {
     width: 400px;
     padding: 0.5rem;
-    font-size: 1.8rem;
+    font-size: 1.1rem;
     border: none;
     border-radius: 4px;
     height: 80px;
@@ -328,7 +334,7 @@ select option {
 }
 
 .search-bar input::placeholder {
-    font-size: 1.8rem;
+    font-size: 0.7rem;
 }
 
 
@@ -336,12 +342,12 @@ select option {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 300px auto;
+    margin: 100px auto;
     border: none;
     outline: none;
     border-radius: 4px;
     width: 200px;
-    height: 80px;
+    height: 40px;
     cursor: pointer;
     background-color: #ff0000;
     padding: 8px;
@@ -353,18 +359,18 @@ select option {
 .settings-content .logout a {
     text-decoration: none;
     color: #000;
-    font-size: 1.8rem;
+    font-size: 0.8rem;
     text-align: center;
 }
 
 .logout i {
     padding: 8px;
-    font-size: 1.8rem;
+    font-size: 0.8rem;
     
 }
 
 .main-container {
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -377,15 +383,16 @@ select option {
 }
 
 .main-content-header {
-    width: 100%;
-    margin-left: 50px;
+    width: 1005;
     
 }
 
 .main-content-header h1 {
-    font-size: 2rem;
+    font-size: 0.8rem;
     margin-bottom: 1rem;
     color: #127eb3;
+    text-align: center;
+    margin-top: 50px;
 }
 
 .main-content {
@@ -396,38 +403,39 @@ select option {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: max-content;
+    width: 100%;
+    gap: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
+    padding: 8px;
 
 }
 
 .book-card {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    margin: 1rem;
-    background-color: #f1f1f1;
-    border-radius: 8px;
+    padding: 8px;
+    margin: 0px 30px;
+    background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    height: 300px;
-    transform: scale(1);
+    width: 100%;
+    height: max-content;
+    gap: 20px;
 }
 
 .book-card-image {
-    width: 100px;
-    height: 150px;
+    width: max-content;
     margin-bottom: 1rem;
-    display: none;
+    display: block;
 }
 
-.book-card-img img {
+.book-card-image img {
     width: 200px;
     height: 200px;
     object-fit: contain;
-    border-radius: 8px;
-    display: none;
+    border-radius: 16px;
 }
 
 .book-card-details {
@@ -438,19 +446,30 @@ select option {
 }
 
 .book-card-details h3 {
-    font-size: 1.2rem;
+    font-size: 0.7rem;
     margin-bottom: 0.5rem;
     text-align: center;
 }
 
 .book-card-details p {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     text-align: center;
 }
 
-.main-content i {
-    font-size: 1.8rem;
-    margin-top: 150px;
+.book-card-details button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border: none;
+    cursor: pointer;
+    background-color: #127eb3;
+    color: #fff;
+    outline: none;
+}
+
+.main-content-body i {
+    font-size: 1.1rem;
+    margin-top: 50px;
+    cursor: pointer;
 }
 
  

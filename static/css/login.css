@@ -29,7 +29,7 @@ body {
 }
 
 .login-container h2 {
-    font-size: 3.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -55,12 +55,12 @@ body {
 
 .login-container form .input-group label {
     padding: 10px;
-    font-size: 2.5rem;
+    font-size: 0.8rem;
     color: #1273be;
 }
 
 .login-container form .input-group label i {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     padding: 8px;
 }
 
@@ -69,7 +69,7 @@ body {
     border: none;
     background: #1273be;  
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     cursor: pointer;
     max-width: 200px;
     border-radius: 8px;
@@ -82,19 +82,19 @@ body {
 
 
 .login-container form .input-group input::placeholder {
-    font-size: 1.6rem;
+    font-size: 0.7rem;
 }
 
 .login-container form input[type="text"] {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 
 .login-container form input[type="password"] {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 
 .login-container form input[type="email"] {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 
 .buttons {
@@ -103,7 +103,7 @@ body {
 }
 
 .login-container p {
-    font-size: 1.6rem;
+    font-size: 1.1rem;
     margin-top: 20px;
 }
 

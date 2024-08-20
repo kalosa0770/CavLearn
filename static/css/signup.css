@@ -23,7 +23,7 @@ body {
 }
 
 .form-container h2 {
-    font-size: 3.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -49,19 +49,19 @@ body {
 
 .form-container form .input-container label {
     padding: 10px;
-    font-size: 2.5rem;
+    font-size: 0.8rem;
     color: #1273be;
 }
 
 .form-container form .input-container label i {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     padding: 8px;
 }
 
 .form-container form .input-container input[type="submit"] {
     background: #1273be;
     color: #fff;
-    font-size: 2.5rem;
+    font-size: 0.9rem;
     cursor: pointer;
     border: none;
     border-radius: 2px;
@@ -88,7 +88,7 @@ body {
 
 .form-container form .input-container .gender input[type="radio"] {
     margin-right: 10px;
-   transform: scale(1.5);
+   transform: scale(0.7);
 }
 
 .form-container form .input-container .gender .male-gender {
@@ -96,19 +96,19 @@ body {
 }
 
 .form-container form .input-container input::placeholder {
-    font-size: 1.6rem;
+    font-size: 0.7rem;
 }
 
 .form-container form input[type="text"] {
-    font-size: 1.6rem;
+    font-size: 0.7rem;
 }
 
 .form-container form input[type="date"] {
-    font-size: 1.6rem;
+    font-size: 0.7rem;
 }
 
 .form-container form input[type="password"] {
-    font-size: 1.6rem;
+    font-size: 0.7rem;
 }
 
 .form-container form button {
@@ -116,7 +116,7 @@ body {
     border: none;
     background: #1273be;  
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     cursor: pointer;
     max-width: 200px;
     border-radius: 8px;
@@ -127,7 +127,7 @@ body {
 }
 
 .form-container p {
-    font-size: 1.6rem;
+    font-size: 0.rem;
     margin-top: 20px;
 }
 

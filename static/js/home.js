@@ -48,4 +48,42 @@ catalogDropdown.addEventListener("click", function(){
 
 
 
+const previousContent = document.getElementById("left-change");
+const nextContent = document.getElementById("right-change");
+const content = document.getElementsByClassName("book-card");
+
+let currentIndex = 0;
+const itemsPerPage = 3;
+
+// Function to update the display of the content
+function updateDisplay() {
+  for (let i = 0; i < content.length; i++) {
+    if (i >= currentIndex && i < currentIndex + itemsPerPage) {
+      content[i].style.display = "flex";
+    } else {
+      content[i].style.display = "none";
+    }
+  }
+}
+
+
+updateDisplay();
+
+nextContent.addEventListener("click", function() {
+  if (currentIndex + itemsPerPage < content.length) {
+    currentIndex += itemsPerPage;
+    updateDisplay();
+  }
+});
+
+previousContent.addEventListener("click", function() {
+  if (currentIndex - itemsPerPage >= 0 || currentIndex - itemsPerPage === -1) {
+    currentIndex -= itemsPerPage;
+    updateDisplay();
+  }
+});
+
+
+
+
 
