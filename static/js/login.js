@@ -5,18 +5,32 @@ document.getElementById('togglePassword').addEventListener('click', function () 
     this.classList.toggle('fa-eye-slash');
 });
 
+// hundles login between user and admin
+document.getElementById('userLogin').addEventListener('click', function() {
+    // Set the form action to the user login route
+    document.getElementById('loginForm').action = '/login';
+    document.getElementById('loginForm').submit(); // Submit the form
+});
 
-function userLogin() {
-    event.preventDefault();
+document.getElementById('adminLogin').addEventListener('click', function() {
+    // has been set to the admin login route
+    document.getElementById('loginForm').action = '/admin_login';
+    document.getElementById('loginForm').submit(); // Submit the form
+});
 
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+//Login Functionalities will be hundled by the backend
+
+// function userLogin() {
+//     event.preventDefault();
+
+//     const username = document.getElementById('username').value;
+//     const email = document.getElementById('email').value;
+//     const password = document.getElementById('password').value;
     
 
-    if (username === 'user' && email === '' && password === 'password') {
-        window.location.href = './home.html';
-    } else {
-        alert('Invalid credentials');
-    }
-}
+//     if (username === 'user' && email === '' && password === 'password') {
+//         window.location.href = './home.html';
+//     } else {
+//         alert('Invalid credentials');
+//     }
+// }

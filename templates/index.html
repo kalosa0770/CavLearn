@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>libTech</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.5.2-web/css/all.min.css') }}">
+</head>    
+    <body class="bg-gray-100 text-gray-900">
+        <header class="bg-white shadow">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <div class="text-2xl font-bold text-blue-600">
+                    <a href="{{ url_for('home') }}">
+                        libra<span class="text-blue-800">Tech.</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-4">
+                    <a href="{{ url_for('login') }}" class="text-gray-700 hover:text-blue-600">Home</a>
+                    <a href="{{ url_for('my_library') }}" class="text-gray-700 hover:text-blue-600">My Library</a>
+                    <div class="relative group">
+                        <a href="#" class="text-gray-700 hover:text-blue-600 flex items-center">
+                            Catalog <i class="fa-solid fa-arrow-down ml-1"></i>
+                        </a>
+                        <ul class="absolute left-0 mt-2 bg-white shadow-lg rounded-lg p-4 hidden group-hover:block">
+                            <li><a href="{{ url_for('category', subject='science') }}" class="block text-gray-700 hover:text-blue-600">Computer Science</a></li>
+                            <li><a href="{{ url_for('category', subject='literature') }}" class="block text-gray-700 hover:text-blue-600">Economics</a></li>
+                            <li><a href="{{ url_for('category', subject='history') }}" class="block text-gray-700 hover:text-blue-600">Business Administration</a></li>
+                            <li><a href="{{ url_for('category', subject='technology') }}" class="block text-gray-700 hover:text-blue-600">Purchasing & Supply</a></li>
+                        </ul>
+                    </div>
+                    <a href="{{ url_for('login') }}" class="text-gray-700 hover:text-blue-600">Login</a>
+                    <a href="{{ url_for('signup') }}" class="text-gray-700 hover:text-blue-600">Signup</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="container mx-auto px-4 py-4">
+                <form action="{{ url_for('search') }}" method="GET" class="flex items-center">
+                    <input type="text" name="query" placeholder="Search books, articles..." required class="w-full px-4 py-2 rounded-l-lg focus:outline-none">
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-r-lg">
+                        <i class="fa-solid fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </header>
+    
+        <main class="container mx-auto px-4 py-8">
+            <section class="text-center mb-8">
+                <h1 class="text-4xl font-bold mb-4">Welcome to libraTech: Your Gateway to Knowledge</h1>
+                <p class="text-lg text-gray-700 mb-4">We believe that learning should be limitless. Dive into a world where books, research, and academic resources are just a click away.</p>
+                <a href="{{ url_for('catalog') }}" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full text-lg">Start Exploring <i class="fa-solid fa-arrow-right ml-2"></i></a>
+            </section>
+    
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for book in books %}
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h4 class="text-xl font-semibold mb-2">{{ book.title }}</h4>
+                    <p class="text-gray-700 mb-4"><strong>Author:</strong> {{ book.author }}</p>
+                    <p class="text-gray-700">{{ book.description }}</p>
+                </div>
+                {% endfor %}
+            </section>
+        </main>
+    
+        <footer class="bg-white shadow mt-8">
+            <div class="container mx-auto px-4 py-4 text-center">
+                <div class="flex justify-center space-x-4 mb-4">
+                    <a href="#"><i class="fab fa-facebook text-blue-600"></i></a>
+                    <a href="#"><i class="fab fa-github text-gray-800"></i></a>
+                    <a href="#"><i class="fas fa-envelope text-red-600"></i></a>
+                    <a href="#"><i class="fab fa-linkedin text-blue-800"></i></a>
+                </div>
+                <p>&copy; 2024 Cavendish University Zambia. All rights reserved.</p>
+            </div>
+        </footer>
+    
+        <script src="{{url_for('static', filename='js/index.js')}}"></script>
+    </body>    
+</html>
