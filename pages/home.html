@@ -48,7 +48,41 @@
                         </li>
                         <li>
                             <div class="account">
-                                <a href=""><i class="fa-solid fa-cog"></i></a>
+                                <i class="fa-solid fa-cog" onclick="settings()" id="settings"></i>
+                                <div id="settings-content">
+                                    <nav>
+                                        <ul>
+                                            <i class="fa-solid fa-close" id="close"></i>
+                                            <li><a href=""><i class="fa-solid fa-user"></i>My Account</a></li>
+                                            <li><a href=""><i class="fa-solid fa-book"></i>My Library</a></li>
+                                            <li>
+                                                <div class="browse-catalog">
+                                                    <p id="catalog"><i class="fa-solid fa-arrow-down"></i>Catalog</p> 
+                                                    <div id="dropdown-catalog">
+                                                        <a href="#">Computer Science</a>
+                                                        <a href="#">Economics</a>
+                                                        <a href="#">Business Administration</a>
+                                                        <a href="#">Purchasing & Supply</a>
+                                                        <!--More courses to be added-->
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li><a href=""><i class="fa-solid fa-compass"></i>Explore</a></li>
+                                            <li>
+                                                
+                                                <div class="search-bar">
+                                                    <i class="fa-solid fa-search"></i>
+                                                    <input type="search" name="search" id="search" placeholder="What do you want?">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </nav>
+
+                                    <div class="logout">
+                                            <a href=""><i class="fa-solid fa-sign-in-alt"></i>Logout</a></li>
+                                        </nav>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         
@@ -69,7 +103,7 @@
                 <div class="main-content-body">
                     <div class="book-card">
                         <div class="book-card-image">
-                            <img src="../static/images/book1.jpg" alt="">
+                            <img src="../static/assets/blackstuden2.jpeg" alt="">
                         </div>
                         <div class="book-card-details">
                             <h3>Programming for dummies</h3>
@@ -80,7 +114,7 @@
                     </div>
                     <div class="book-card">
                         <div class="book-card-image">
-                            <img src="../static/images/book2.jpg" alt="">
+                            <img src="../static/assets/blackstudent1.jpeg" alt="">
                         </div>
                         <div class="book-card-details">
                             <h3>ECO101</h3>
@@ -90,7 +124,7 @@
                     </div>
                     <div class="book-card">
                         <div class="book-card-image">
-                            <img src="../static/images/book3.jpg" alt="">
+                            <img src="../static/assets/blackstudent3.webp" alt="">
                         </div>
                         <div class="book-card-details">
                             <h3>Operations Research</h3>
@@ -101,7 +135,7 @@
                     </div>
                     <div class="book-card">
                         <div class="book-card-image">
-                            <img src="../static/images/book4.jpg" alt="">
+                            <img src="../static/assets/blackstudent4.jpeg" alt="">
                         </div>
                         <div class="book-card-details">
                             <h3>Computer Ethics</h3>
@@ -112,7 +146,7 @@
                     </div>
                     <div class="book-card">
                         <div class="book-card-image">
-                            <img src="../static/images/book5.jpg" alt="">
+                            <img src="../static/assets/eco101.jpeg" alt="">
                         </div>
                         <div class="book-card-details">
                             <h3>Marketing</h3>
@@ -123,7 +157,7 @@
                     </div>
                     <div class="book-card">
                         <div class="book-card-image">
-                            <img src="../static/images/book5.jpg" alt="">
+                            <img src="../static/assets/orbook.jpeg" alt="">
                         </div>
                         <div class="book-card-details">
                             <h3>Mthematics for Computing</h3>
