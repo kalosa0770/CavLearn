@@ -87,3 +87,36 @@ previousContent.addEventListener("click", function() {
 
 
 
+
+var slideIndex = 0;
+var slides = document.getElementsByClassName("featured-content-slideshow-image");
+showSlides();
+
+function showSlides() {
+    var i;
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    slides[slideIndex-1].style.animation = "slideIn 2s ease-in-out";
+    setTimeout(showSlides, 10000); // Change slide every 4 seconds
+}
+
+document.getElementById("prev").addEventListener("click", function() {
+    slideIndex -= 2;
+    if (slideIndex < 0) {slideIndex = slides.length - 1}
+    slides[slideIndex].style.animation = "slideOut 2s ease-in-out";
+    showSlides();
+});
+
+document.getElementById("next").addEventListener("click", function() {
+    slides[slideIndex-1].style.animation = "slideOut 2s ease-in-out";
+    showSlides();
+});
+
+
+
+
+
