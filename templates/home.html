@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.5.2-web/css/all.min.css') }}">
+    <script src="{{ url_for('static', filename='fontawesome-free-6.5.2-web/js/jquery-3.7.1.min.js') }}"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <header class="bg-white shadow-md">
+        <!-- Header container -->
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h3 class="text-2xl font-bold text-blue-600">libra<span class="text-gray-800">Tech.</span></h3>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="text-gray-700 hover:text-blue-500">Catalog</a>
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-blue-500 flex items-center">Browse
+                        <i class="fa-solid fa-arrow-down ml-2"></i>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg py-2 z-10">
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Computer Science</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Economics</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Business Administration</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Purchasing & Supply</a>
+                    </div>
+                </div>
+                <a href="#" class="text-gray-700 hover:text-blue-500">Explore</a>
+                <div class="flex items-center space-x-2">
+                    <select class="border border-gray-300 rounded-l-lg px-3 py-2 focus:outline-none">
+                        <option value="All">All</option>
+                        <option value="Title">Title</option>
+                        <option value="Author">Author</option>
+                        <option value="Text">Text</option>
+                        <option value="Pdf Books">Pdf Books</option>
+                    </select>
+                    <input type="text" placeholder="Search" class="border border-gray-300 rounded-none px-4 py-2 focus:outline-none">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-r-lg"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="relative">
+                    <i class="fa-solid fa-cog text-xl cursor-pointer" onclick="settings()" id="settings"></i>
+                    <div id="settings-content" class="absolute right-0 hidden bg-white shadow-lg rounded-lg py-4 mt-2 z-10">
+                        <nav>
+                            <ul class="text-gray-700">
+                                <li class="flex justify-end pr-4"><i class="fa-solid fa-close cursor-pointer" id="close"></i></li>
+                                <li><a href="{{url_for('account')}}" class="block px-4 py-2 hover:bg-gray-100"><i class="fa-solid fa-user mr-2"></i>My Account</a></li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100"><i class="fa-solid fa-book mr-2"></i>My Library</a></li>
+                                <li>
+                                    <div class="relative group">
+                                        <button class="block w-full text-left px-4 py-2 hover:bg-gray-100 flex items-center">
+                                            <i class="fa-solid fa-arrow-down mr-2"></i>Catalog
+                                        </button>
+                                        <div id="dropdown-catalog" class="hidden group-hover:block bg-white shadow-lg rounded-lg py-2">
+                                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Computer Science</a>
+                                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Economics</a>
+                                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Business Administration</a>
+                                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Purchasing & Supply</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100"><i class="fa-solid fa-compass mr-2"></i>Explore</a></li>
+                                <li class="flex items-center px-4 py-2">
+                                    <input type="search" name="search" id="search" placeholder="What do you want?" class="flex-grow border border-gray-300 px-4 py-2 rounded-lg focus:outline-none">
+                                    <i class="fa-solid fa-search text-blue-600 ml-2"></i>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="px-4 py-2">
+                            <a href="{{url_for('home')}}" class="block text-red-600 hover:underline"><i class="fa-solid fa-sign-in-alt mr-2"></i>Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-6 py-8">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800">Featured Content</h1>
+        </div>
+        <div class="flex justify-center items-center">
+            <i class="fa-solid fa-arrow-left text-2xl cursor-pointer" id="left-change"></i>
+            <div class="flex space-x-6 overflow-x-auto px-4">
+                <div class="bg-white p-4 rounded-lg shadow-md w-64">
+                    <img src="{{ url_for('static', filename='assets/blackstuden2.jpeg') }}" alt="" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-gray-800">Programming for Dummies</h3>
+                        <p class="text-gray-600">Elijah</p>
+                        <p class="text-gray-600 mb-4">PDF</p>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Download</button>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md w-64">
+                    <img src="{{ url_for('static', filename='assets/blackstudent1.jpeg') }}" alt="" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-gray-800">ECO101</h3>
+                        <p class="text-gray-600">PDF</p>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">View</button>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md w-64">
+                    <img src="{{ url_for('static', filename='assets/blackstudent1.jpeg') }}" alt="" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-gray-800">Mathematics for Computing</h3>
+                        <p class="text-gray-600">PDF</p>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Download</button>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md w-64">
+                    <img src="{{ url_for('static', filename='assets/blackstuden2.jpeg') }}" alt="" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-gray-800">Enterprise Networking</h3>
+                        <p class="text-gray-600">Elijah</p>
+                        <p class="text-gray-600 mb-4">PDF</p>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Download</button>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md w-64">
+                    <img src="{{ url_for('static', filename='assets/blackstuden2.jpeg') }}" alt="" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-gray-800">Robotics</h3>
+                        <p class="text-gray-600">RB401</p>
+                        <p class="text-gray-600 mb-4">PDF</p>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Download</button>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md w-64">
+                    <img src="{{ url_for('static', filename='assets/blackstuden2.jpeg') }}" alt="" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-gray-800">Data Structures</h3>
+                        <p class="text-gray-600">Priya</p>
+                        <p class="text-gray-600 mb-4">Book</p>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Download</button>
+                    </div>
+                </div>
+            </div>
+            <i class="fa-solid fa-arrow-right text-2xl cursor-pointer" id="right-change"></i>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</body>
+
+</html>
