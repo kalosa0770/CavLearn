@@ -119,4 +119,46 @@ document.getElementById("next").addEventListener("click", function() {
 
 
 
+const backContent = document.getElementById("back");
+const nextDisplay = document.getElementById("next");
+const contentDisplay = document.getElementsByClassName("other-content");
+
+let num = 0;
+const bookContent = 3;
+
+// Function to update the display of the content
+function updateDisplayContent() {
+  for (let i = 0; i < contentDisplay.length; i++) {
+    if (i >= num && i < num + bookContent) {
+      contentDisplay[i].style.display = "flex";
+    } else {
+      contentDisplay[i].style.display = "none";
+    }
+  }
+}
+
+// Initial display update
+updateDisplayContent();
+
+nextDisplay.addEventListener("click", function() {
+  if (num + bookContent < contentDisplay.length) {
+    num += bookContent;
+    updateDisplayContent();
+  }
+});
+
+backContent.addEventListener("click", function() {
+  if (num - bookContent >= 0) {
+    num -= bookContent;
+    updateDisplayContent();
+  }
+});
+
+
+
+
+
+
+
+
 

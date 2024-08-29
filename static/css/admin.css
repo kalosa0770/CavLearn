@@ -1,0 +1,34 @@
+
+
+/* .table {
+    position: relative;
+    bottom: 50px;
+    left: 250px;
+    margin: 20px;
+} */
+
+@media screen and (maxwidth: 1200px) {
+    .table-details {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .card-body {
+        width: 100%;
+        background-color: none;
+    }
+
+    .table {
+        position: relative;
+        bottom: none;
+        left: none;
+        max-width: 100%;
+    }  
+    
+    tr {
+        display: flex;
+        flex-direction: column;
+    }
+}

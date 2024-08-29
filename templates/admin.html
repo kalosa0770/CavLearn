@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - libraTech</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../static/css/admin.css">
+</head>
+<body>
+    <div class="container pt-3 my-3 bg-light text-body">
+        <section id="dashboard" class="text-center my-3">
+            <div class="card-body">
+                <h2>Admin Dashboard</h2>
+                <p>Welcome to the admin dashboard. Here you can manage users content.</p>
+            </div>
+        </section>
+
+        <section id="content" class="card text-center my-3">
+           <div class="card-body bg-0">
+            <h2>Content Management</h2>
+            <p>Add, edit, or remove e-books and other digital resources from the library.</p>
+           <div class="text-start">
+            <button class="btn btn-outline-primary my-3" data-bs-toggle="collapse" data-bs-target="#add">Add Content</button>
+           </div>
+          <table class="table-details">
+            <tr>
+                <td>
+                    <form id="add" class="collapse mt-3" onsubmit="formSubmit()">
+                        <div class="form-group">
+                            <label for="title">Title:</label>
+                            <input type="text" id="title" class="form-control w-100">
+                            <label for="author">Author:</label>
+                            <input type="text" id="author" class="form-control w-100">
+                            <label for="description">Description:</label>
+                            <textarea id="description" class="form-control w-100"></textarea>
+                            <label for="category">Category:</label>
+                            <input type="text" id="category" class="form-control w-100">
+                            <label for="file">Choose File:</label>
+                            <input type="file" id="file" class="form-control w-100">
+                            <button class="btn btn-success my-3">Upload</button>
+                        </div>
+                    </form>
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <table class="table"  id="tableUpdate">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Description</th>
+                                <th>Category</th>
+                                <th>File</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+          </table>
+        </div>
+    
+        <!-- Add Resource Modal -->
+        <!-- <div class="modal fade" id="addResourceModal" tabindex="-1" aria-labelledby="addResourceModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addResourceModalLabel">Add New Resource</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form autocomplete="off" onsubmit="formSubmit()">
+                            <div class="mb-3">
+                                <label for="resourceTitle" class="form-label">Title</label>
+                                <input type="text" name="resourceTitle" class="form-control" id="resourceTitle">
+                            </div>
+                            <div class="mb-3">
+                                <label for="resourceAuthor" class="form-label">Author</label>
+                                <input type="text" name="resourceAuthor" class="form-control" id="resourceAuthor">
+                            </div>
+                            <div class="mb-3">
+                                <label for="resourceCategory" class="form-label">Category</label>
+                                <input type="text" name="resourceCategory" class="form-control" id="resourceCategory">
+                            </div>
+                            <div class="mb-3">
+                                <label for="resourceFile" class="form-label">Upload File</label>
+                                <input type="file" name="resourceFile" class="form-control" id="resourceFile">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Resource</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+     -->
+        <!-- Edit Resource Modal -->
+        <div class="modal fade" id="editResourceModal" tabindex="-1" aria-labelledby="editResourceModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editResourceModalLabel">Edit Resource</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form >
+                            <div class="mb-3">
+                                <label for="editResourceTitle" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="editResourceTitle">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editResourceAuthor" class="form-label">Author</label>
+                                <input type="text" class="form-control" id="editResourceAuthor">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editResourceCategory" class="form-label">Category</label>
+                                <input type="text" class="form-control" id="editResourceCategory">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editResourceFile" class="form-label">Upload New File</label>
+                                <input type="file" class="form-control" id="editResourceFile">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Resource</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    </div>
+
+    <script src="../static/js/admin.js"></script>
+</body>
+</html>
