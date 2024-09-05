@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog - libraTech</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <style>
+        .book-cover {
+            height: 200px;
+            object-fit: cover;
+            width: 150px;
+        }
+
+        .filter-section {
+            margin-bottom: 20px;
+        }
+
+        .book-actions a {
+            margin-right: 10px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            height: 100%;
+            padding: 20px;
+            align-items: center;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .book-actions {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .col-md-3.mb-4.book-item {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Catalog</h1>
+        
+        <div class="filter-section d-flex justify-content-between">
+            <div class="col-md-4">
+                <select id="categoryFilter" class="form-select">
+                    <option value="all">All Categories</option>
+                    <option value="science">Computer Science</option>
+                    <option value="economics">Economics</option>
+                    <option value="business">Business Administration</option>
+                    <option value="supply">Purchasing & Supply</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <select id="sortFilter" class="form-select">
+                    <option value="popular">Most Popular</option>
+                    <option value="newest">Newest</option>
+                    <option value="alphabetical">Alphabetical</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row" id="bookList">
+            <div class="col-md-4 mb-4 book-item" data-category="science">
+                <div class="card">
+                    <img src="path-to-cover1.jpg" class="book-cover" alt="Book Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Book Title 1</h5>
+                        <p class="card-text">Author 1</p>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary">Download</a>
+                            <a href="#" class="btn btn-secondary">Save to Library</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 book-item" data-category="science">
+                <div class="card">
+                    <img src="path-to-cover1.jpg" class="book-cover" alt="Book Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Book Title 1</h5>
+                        <p class="card-text">Author 1</p>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary">Download</a>
+                            <a href="#" class="btn btn-secondary">Save to Library</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 book-item" data-category="science">
+                <div class="card">
+                    <img src="path-to-cover1.jpg" class="book-cover" alt="Book Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Book Title 1</h5>
+                        <p class="card-text">Author 1</p>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary">Download</a>
+                            <a href="#" class="btn btn-secondary">Save to Library</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 book-item" data-category="science">
+                <div class="card">
+                    <img src="path-to-cover1.jpg" class="book-cover" alt="Book Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Book Title 1</h5>
+                        <p class="card-text">Author 1</p>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary">Download</a>
+                            <a href="#" class="btn btn-secondary">Save to Library</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 book-item" data-category="science">
+                <div class="card">
+                    <img src="path-to-cover1.jpg" class="book-cover" alt="Book Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Book Title 1</h5>
+                        <p class="card-text">Author 1</p>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary">Download</a>
+                            <a href="#" class="btn btn-secondary">Save to Library</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 book-item" data-category="science">
+                <div class="card">
+                    <img src="path-to-cover1.jpg" class="book-cover" alt="Book Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Book Title 1</h5>
+                        <p class="card-text">Author 1</p>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary">Download</a>
+                            <a href="#" class="btn btn-secondary">Save to Library</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 book-item" data-category="science">
+                <div class="card">
+                    <img src="path-to-cover1.jpg" class="book-cover" alt="Book Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Book Title 1</h5>
+                        <p class="card-text">Author 1</p>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary">Download</a>
+                            <a href="#" class="btn btn-secondary">Save to Library</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 book-item" data-category="science">
+                <div class="card">
+                    <img src="path-to-cover1.jpg" class="book-cover" alt="Book Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Book Title 1</h5>
+                        <p class="card-text">Author 1</p>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary">Download</a>
+                            <a href="#" class="btn btn-secondary">Save to Library</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 book-item" data-category="science">
+                <div class="card">
+                    <img src="path-to-cover1.jpg" class="book-cover" alt="Book Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Book Title 1</h5>
+                        <p class="card-text">Author 1</p>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary">Download</a>
+                            <a href="#" class="btn btn-secondary">Save to Library</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat for other books -->
+        </div>
+    </div>
+
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('categoryFilter').addEventListener('change', function() {
+            let category = this.value;
+            let books = document.querySelectorAll('.book-item');
+            books.forEach(function(book) {
+                if (category === 'all' || book.getAttribute('data-category') === category) {
+                    book.style.display = 'flex';
+                } else {
+                    book.style.display = 'none';
+                }
+            });
+        });
+
+        document.getElementById('sortFilter').addEventListener('change', function() {
+            // Implement sorting logic based on the selected option
+        });
+    </script>
+</body>
+</html>

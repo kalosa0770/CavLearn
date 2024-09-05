@@ -119,9 +119,9 @@ document.getElementById("next").addEventListener("click", function() {
 
 
 
-const backContent = document.getElementById("back");
-const nextDisplay = document.getElementById("next");
-const contentDisplay = document.getElementsByClassName("other-content");
+const backContent = document.getElementById("left-change");
+const nextDisplay = document.getElementById("right-change");
+const contentDisplay = document.getElementsByClassName("text-center");
 
 let num = 0;
 const bookContent = 3;
